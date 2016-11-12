@@ -4,3 +4,5 @@ E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2\bin\Debug\Zadanie2.pdb
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2\obj\Debug\Zadanie2.csprojResolveAssemblyReference.cache
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2\obj\Debug\Zadanie2.exe
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2\obj\Debug\Zadanie2.pdb
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2\bin\Debug\Zadanie2Forms.exe
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2\bin\Debug\Zadanie2Forms.pdb

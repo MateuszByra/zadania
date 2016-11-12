@@ -12,10 +12,14 @@ namespace Zadanie2
         private ProgressBar bar;
         private int a, b, c, x1, x2, n;
         private double deltaX;
+        private Dictionary<int,double> parallelLoopTimes { get; set; }
+        private Dictionary<int, double> normalLoopTimes { get; set; }
 
         public Calka()
         {
             bar = new ProgressBar();
+            parallelLoopTimes = new Dictionary<int, double>();
+            normalLoopTimes = new Dictionary<int, double>();
         }
 
         public void InputData()
@@ -61,10 +65,15 @@ namespace Zadanie2
             Stopwatch normalLoopTimer = new Stopwatch();
             normalLoopTimer.Start();
             int counter = 1;
+            Stopwatch oneTaskTime = new Stopwatch();
             for (int i = 1; i < n; i++)
             {
+                oneTaskTime.Start();
                 result += Function(x1 + i * deltaX);
                 bar.WriteBar(counter++);
+                oneTaskTime.Stop();
+                normalLoopTimes.Add(i, oneTaskTime.ElapsedMilliseconds);
+                oneTaskTime.Reset();
             };
             normalLoopTimer.Stop();
             return new[] { result += ((Function(x1) + Function(x2)) / 2) * deltaX, normalLoopTimer.ElapsedMilliseconds };
@@ -77,16 +86,35 @@ namespace Zadanie2
             Stopwatch parallelLoopTimer = new Stopwatch();
             parallelLoopTimer.Start();
             int counter = 1;
+            Stopwatch oneTaskTime = new Stopwatch();
             Parallel.For(1, n, (i) => {
+                oneTaskTime.Start();
                 var fncResult = Function(x1 + i * deltaX);
                 lock (_lock)
                 {
                     result += fncResult;
                     bar.WriteBarForParallel(counter++);
+                    oneTaskTime.Stop();
+                    parallelLoopTimes.Add(i, oneTaskTime.ElapsedMilliseconds);
+                    oneTaskTime.Reset();
+
                 }
             });
             parallelLoopTimer.Stop();
             return new[] { result += ((Function(x1) + Function(x2)) / 2) * deltaX, parallelLoopTimer.ElapsedMilliseconds };
+        }
+
+        public IDictionary<int,double> GetNormalLoopTasksTimes()
+        {
+            return normalLoopTimes;
+        }
+
+        public IDictionary<int,double> GetParallelLoopTasksTimes()
+        {
+            var sorted = from pair in parallelLoopTimes
+                         orderby pair.Key ascending
+                         select pair;
+            return sorted.ToDictionary(t=>t.Key, t=>t.Value);
         }
     }
 }

@@ -51,7 +51,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Zadanie2Forms\Zadanie2Forms.csproj">
+      <Project>{882f5a97-8e57-4df6-9b9d-a1cb2427cc6b}</Project>
+      <Name>Zadanie2Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -70,14 +70,12 @@ namespace Zadanie2Forms
 
         #endregion
 
-        private Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 
         private void AddSeriesForParallelLoop(IDictionary<int, double> values)
         {
             var xValues = values.Keys;
             var yValues = values.Values;
-            //var xValues = new List<int>() { 1,2,3,4};
-            //var yValues = new List<double>() { 0.85, 0.25, 0.95, 0.12 };
             Series parallelLoopSeries = new Series();
             parallelLoopSeries.ChartType = SeriesChartType.Line;
             parallelLoopSeries.Color = Color.FromArgb(112, 255, 200);

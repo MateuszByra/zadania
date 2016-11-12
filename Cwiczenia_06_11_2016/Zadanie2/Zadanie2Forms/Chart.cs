@@ -6,17 +6,19 @@ using System.Windows.Forms;
 
 namespace Zadanie2Forms
 {
-    static class Program
+    public static class Chart
     {
-        /// <summary>
+        public static IDictionary<int,double> ParallelLoopTasksTimes { get; set; }
+        public static IDictionary<int, double> NormalLoopTasksTimes { get; set; }
+        /// <summary>1
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChartForm());
+            Application.Run(new ChartForm(ParallelLoopTasksTimes,NormalLoopTasksTimes));
         }
     }
 }
