@@ -10,8 +10,8 @@ namespace Zadanie2
     public class Calka
     {
         private ProgressBar bar;
-        private int a, b, c, x1, x2, n;
-        private double deltaX;
+        protected int a, b, c, x1, x2, n;
+        protected double deltaX;
         private Dictionary<int,double> parallelLoopTimes { get; set; }
         private Dictionary<int, double> normalLoopTimes { get; set; }
 
@@ -54,12 +54,12 @@ namespace Zadanie2
             Console.ReadKey();
         }
 
-        double Function(double x)
+        protected double Function(double x)
         {
             return a * (x * x) + b * x + c;
         }
 
-        private double[] Calculate()
+        protected virtual double[] Calculate()
         {
             double result = 0;
             Stopwatch normalLoopTimer = new Stopwatch();
@@ -79,7 +79,7 @@ namespace Zadanie2
             return new[] { result += ((Function(x1) + Function(x2)) / 2) * deltaX, normalLoopTimer.ElapsedMilliseconds };
         }
 
-        private double[] CalculateParallel()
+        protected virtual double[] CalculateParallel()
         {
             object _lock = new object();
             double result = 0;

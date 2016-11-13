@@ -22,7 +22,7 @@ namespace Zadanie2
             calka.InputData();
             Chart.NormalLoopTasksTimes = calka.GetNormalLoopTasksTimes();
             Chart.ParallelLoopTasksTimes = calka.GetParallelLoopTasksTimes();
-            Chart.Show();
+            Chart.Main();
             }
         }
     }  

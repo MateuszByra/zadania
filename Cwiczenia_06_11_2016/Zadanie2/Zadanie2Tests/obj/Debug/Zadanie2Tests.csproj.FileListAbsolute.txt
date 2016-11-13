@@ -1,0 +1,12 @@
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Zadanie2Tests.dll
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Zadanie2Tests.pdb
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Newtonsoft.Json.dll
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Zadanie2.exe
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Zadanie2Forms.exe
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Zadanie2.pdb
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Newtonsoft.Json.xml
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\bin\Debug\Zadanie2Forms.pdb
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\obj\Debug\Zadanie2Tests.csprojResolveAssemblyReference.cache
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\obj\Debug\Zadanie2Tests.dll
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Tests\obj\Debug\Zadanie2Tests.pdb

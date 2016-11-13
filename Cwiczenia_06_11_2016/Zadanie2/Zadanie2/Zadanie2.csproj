@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calka.cs" />
+    <Compile Include="CalkaParametersList.cs" />
+    <Compile Include="CalkaParametersModel.cs" />
+    <Compile Include="CalkaWithDataLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgressBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
