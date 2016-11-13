@@ -1,23 +1,26 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zadanie2.Models;
 
 namespace Zadanie2
 {
     public class CalkaWithDataLogger : Calka
     {
-        private Dictionary<CalkaParametersModel, double []> parametersWithParallelResultDict { get; set; }
-        private Dictionary<CalkaParametersModel, double[]> parametersWithNormalResultDict { get; set; }
+        private CalkaParametersWriteList ParallelResult { get; set; }
+        private CalkaParametersWriteList NormalResult { get; set; }
         public CalkaWithDataLogger()
         {
-            parametersWithParallelResultDict = new Dictionary<CalkaParametersModel, double[]>();
-            parametersWithNormalResultDict = new Dictionary<CalkaParametersModel, double[]>();
+            ParallelResult = new CalkaParametersWriteList {Type="Parallel" };
+            NormalResult = new CalkaParametersWriteList { Type = "Normal" };
         }
 
-        public void CalculateParallel(CalkaParametersModel parametersModel)
+        public void CalculateParallel(CalkaParametersReadModel parametersModel)
         {
             a = parametersModel.A;
             b = parametersModel.B;
@@ -26,10 +29,12 @@ namespace Zadanie2
             x2 = parametersModel.X2;
             n = parametersModel.N;
             deltaX = x1 - x2 / n;
-            parametersWithParallelResultDict.Add(parametersModel, CalculateParallel());
+            var result = CalculateParallel();
+
+            ParallelResult.Data.Add(new CalkaParametersWriteModel {A=a,B=b,C=c,X1=x1,X2=x2,N=n,Result=result[0],Miliseconds=result[1] });
         }
 
-        public void CalculateNormal(CalkaParametersModel parametersModel)
+        public void CalculateNormal(CalkaParametersReadModel parametersModel)
         {
             a = parametersModel.A;
             b = parametersModel.B;
@@ -38,7 +43,8 @@ namespace Zadanie2
             x2 = parametersModel.X2;
             n = parametersModel.N;
             deltaX = x1 - x2 / n;
-            parametersWithNormalResultDict.Add(parametersModel, Calculate());
+            var result = Calculate();
+            NormalResult.Data.Add(new CalkaParametersWriteModel { A = a, B = b, C = c, X1 = x1, X2 = x2, N = n, Result = result[0], Miliseconds = result[1] });
         }
 
         protected override double[] CalculateParallel()
@@ -73,9 +79,14 @@ namespace Zadanie2
             return new[] { result += ((Function(x1) + Function(x2)) / 2) * deltaX, normalLoopTimer.ElapsedMilliseconds };
         }
 
-        public void LogToFile()
-        {//zrobic zapis parallel? z rozdzieleniem na normal i parallel wyniki
-
+        public void LogToFile(string path)
+        { 
+            var parallelResult=JsonConvert.SerializeObject(ParallelResult);
+            var normalResult =JsonConvert.SerializeObject(NormalResult);
+            using(StreamWriter writer = new StreamWriter(path))
+            {
+                writer.Write(parallelResult+"\n"+normalResult);   
+            }
         }
     }
 }

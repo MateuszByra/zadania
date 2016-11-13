@@ -2,9 +2,9 @@ E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\bin\Debug\Zadanie
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\bin\Debug\Zadanie2Forms.exe
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\bin\Debug\Zadanie2Forms.pdb
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.csprojResolveAssemblyReference.cache
+E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.ChartForm.resources
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.Form1.resources
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.Properties.Resources.resources
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.csproj.GenerateResource.Cache
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.exe
 E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.pdb
-E:\Projekty\Studia\Cwiczenia_06_11_2016\Zadanie2\Zadanie2Forms\obj\Debug\Zadanie2Forms.ChartForm.resources

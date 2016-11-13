@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zadanie2
+namespace Zadanie2.Models
 {
-    public class CalkaParametersModel
+    public class CalkaParametersReadModel
     {
         public int A { get; set; }
         public int B { get; set; }

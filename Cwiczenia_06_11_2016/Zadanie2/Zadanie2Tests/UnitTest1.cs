@@ -4,6 +4,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Zadanie2;
 using System.Collections.Generic;
+using Zadanie2.Models;
 
 namespace Zadanie2Tests
 {
@@ -27,12 +28,13 @@ namespace Zadanie2Tests
         private void Calculate()
         {
             CalkaWithDataLogger calka = new CalkaWithDataLogger();
-            foreach(CalkaParametersModel item in list.ParametersList)
+            foreach(CalkaParametersReadModel item in list.ParametersList)
             {
                 calka.CalculateParallel(item);
                 calka.CalculateNormal(item);
             }
-            calka.LogToFile();
+            var path = @"C:\Users\Maly\Desktop\logs.json";
+            calka.LogToFile(path);
         }
     }
 }
