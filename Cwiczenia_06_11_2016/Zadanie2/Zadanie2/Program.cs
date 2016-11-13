@@ -13,11 +13,17 @@ namespace Zadanie2
     {
         static void Main(string[] args)
         {
+            if (args.Any())
+            {
+
+            }
+            else { 
             Calka calka = new Calka();
             calka.InputData();
             Chart.NormalLoopTasksTimes = calka.GetNormalLoopTasksTimes();
             Chart.ParallelLoopTasksTimes = calka.GetParallelLoopTasksTimes();
-            Chart.Main();
+            Chart.Show();
+            }
         }
     }  
 }
