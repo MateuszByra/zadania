@@ -40,6 +40,9 @@ namespace Zadanie2Tests
             stwNormal.Start();   
             calka.LogToFile(path);
             stwNormal.Stop();
+            stwParallel.Start();
+            calka.ParallelLogToFile(@"C:\Users\Maly\Desktop\parallelLogs.json");
+            stwParallel.Stop();
         }
     }
 }

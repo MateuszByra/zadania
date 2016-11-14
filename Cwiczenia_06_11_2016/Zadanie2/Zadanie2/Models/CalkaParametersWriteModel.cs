@@ -10,5 +10,6 @@ namespace Zadanie2.Models
     {
         public double Result { get; set; }
         public double Miliseconds { get; set; }
+        public string Type { get; set; }
     }
 }

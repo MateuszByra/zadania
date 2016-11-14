@@ -9,7 +9,6 @@ namespace Zadanie2
 {
     public class CalkaParametersWriteList
     {
-        public string Type { get; set; }
         public List<CalkaParametersWriteModel> Data { get; set; }
 
         public CalkaParametersWriteList()

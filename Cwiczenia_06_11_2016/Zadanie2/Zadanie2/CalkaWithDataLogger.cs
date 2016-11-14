@@ -12,12 +12,14 @@ namespace Zadanie2
 {
     public class CalkaWithDataLogger : Calka
     {
-        private CalkaParametersWriteList ParallelResult { get; set; }
-        private CalkaParametersWriteList NormalResult { get; set; }
+        /*private CalkaParametersWriteList ParallelResult { get; set; }
+        private CalkaParametersWriteList NormalResult { get; set; }*/
+        private CalkaParametersWriteList _result { get; set; }
         public CalkaWithDataLogger()
         {
-            ParallelResult = new CalkaParametersWriteList {Type="Parallel" };
-            NormalResult = new CalkaParametersWriteList { Type = "Normal" };
+            /*ParallelResult = new CalkaParametersWriteList();
+            NormalResult = new CalkaParametersWriteList();*/
+            _result = new CalkaParametersWriteList();
         }
 
         public void CalculateParallel(CalkaParametersReadModel parametersModel)
@@ -31,7 +33,8 @@ namespace Zadanie2
             deltaX = x1 - x2 / n;
             var result = CalculateParallel();
 
-            ParallelResult.Data.Add(new CalkaParametersWriteModel {A=a,B=b,C=c,X1=x1,X2=x2,N=n,Result=result[0],Miliseconds=result[1] });
+            //ParallelResult.Data.Add(new CalkaParametersWriteModel { Type="Parallel",A=a,B=b,C=c,X1=x1,X2=x2,N=n,Result=result[0],Miliseconds=result[1] });
+            _result.Data.Add(new CalkaParametersWriteModel { Type = "Parallel", A = a, B = b, C = c, X1 = x1, X2 = x2, N = n, Result = result[0], Miliseconds = result[1] });
         }
 
         public void CalculateNormal(CalkaParametersReadModel parametersModel)
@@ -44,7 +47,7 @@ namespace Zadanie2
             n = parametersModel.N;
             deltaX = x1 - x2 / n;
             var result = Calculate();
-            NormalResult.Data.Add(new CalkaParametersWriteModel { A = a, B = b, C = c, X1 = x1, X2 = x2, N = n, Result = result[0], Miliseconds = result[1] });
+            _result.Data.Add(new CalkaParametersWriteModel { Type="Normal", A = a, B = b, C = c, X1 = x1, X2 = x2, N = n, Result = result[0], Miliseconds = result[1] });
         }
 
         protected override double[] CalculateParallel()
@@ -81,12 +84,32 @@ namespace Zadanie2
 
         public void LogToFile(string path)
         {
-            var parallelResult=JsonConvert.SerializeObject(ParallelResult);
-            var normalResult =JsonConvert.SerializeObject(NormalResult);
+            //ParallelResult.Data.AddRange(NormalResult.Data);
             using(StreamWriter writer = new StreamWriter(path))
             {
-                writer.Write(parallelResult+"\n"+normalResult);   
+                foreach (var item in _result.Data)
+                {
+                    writer.WriteLine(JsonConvert.SerializeObject(item));
+                }
             }
+        }
+
+        public void ParallelLogToFile(string path)
+        {
+            //ParallelResult.Data.AddRange(NormalResult.Data);
+            object _lock = new object();
+            using(StreamWriter writer = new StreamWriter(path))
+            {
+                Parallel.ForEach(_result.Data, x =>
+                {
+                    lock (_lock)
+                    {
+                        writer.WriteLine(JsonConvert.SerializeObject(x));
+                    }
+                    
+                });
+            }
+            
         }
     }
 }
