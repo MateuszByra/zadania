@@ -80,7 +80,7 @@ namespace Zadanie2
         }
 
         public void LogToFile(string path)
-        { 
+        {
             var parallelResult=JsonConvert.SerializeObject(ParallelResult);
             var normalResult =JsonConvert.SerializeObject(NormalResult);
             using(StreamWriter writer = new StreamWriter(path))

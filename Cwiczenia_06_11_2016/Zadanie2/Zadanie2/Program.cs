@@ -15,7 +15,18 @@ namespace Zadanie2
         {
             if (args.Any())
             {
+                var readPath = args[1];
+                var writePath = args[2];
 
+                FileReader fileReader = new FileReader();
+                CalkaWithDataLogger calkaWithLogger = new CalkaWithDataLogger();
+                var parametersList = fileReader.GetParametersListFromFile(readPath);
+                foreach(var item in parametersList.ParametersList)
+                {
+                    calkaWithLogger.CalculateParallel(item);
+                    calkaWithLogger.CalculateNormal(item);
+                }
+                calkaWithLogger.LogToFile(writePath);
             }
             else { 
             Calka calka = new Calka();

@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Zadanie2;
 using System.Collections.Generic;
 using Zadanie2.Models;
+using System.Diagnostics;
 
 namespace Zadanie2Tests
 {
@@ -34,7 +35,11 @@ namespace Zadanie2Tests
                 calka.CalculateNormal(item);
             }
             var path = @"C:\Users\Maly\Desktop\logs.json";
+            Stopwatch stwNormal = new Stopwatch();
+            Stopwatch stwParallel = new Stopwatch();
+            stwNormal.Start();   
             calka.LogToFile(path);
+            stwNormal.Stop();
         }
     }
 }

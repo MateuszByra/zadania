@@ -50,6 +50,7 @@
     <Compile Include="Calka.cs" />
     <Compile Include="CalkaParametersList.cs" />
     <Compile Include="CalkaParametersWriteList.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="Models\CalkaParametersReadModel.cs" />
     <Compile Include="CalkaWithDataLogger.cs" />
     <Compile Include="Models\CalkaParametersWriteModel.cs" />
