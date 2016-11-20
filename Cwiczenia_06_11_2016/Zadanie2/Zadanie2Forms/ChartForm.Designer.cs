@@ -32,8 +32,8 @@ namespace Zadanie2Forms
         /// </summary>
         private void InitializeComponent()
         {
-            ChartArea chartArea1 = new ChartArea();
-            Legend legend1 = new Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -44,17 +44,17 @@ namespace Zadanie2Forms
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new Point(12, 12);
+            this.chart1.Location = new System.Drawing.Point(12, 12);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new Size(747, 515);
+            this.chart1.Size = new System.Drawing.Size(1030, 515);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // ChartForm
             // 
-            this.AutoScaleDimensions = new SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new Size(771, 539);
+            this.ClientSize = new System.Drawing.Size(1071, 539);
             this.Controls.Add(this.chart1);
             this.Name = "ChartForm";
             this.Text = "ChartForm";

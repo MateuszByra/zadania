@@ -15,8 +15,8 @@ namespace Zadanie2
         {
             if (args.Any())
             {
-                var readPath = args[1];
-                var writePath = args[2];
+                var readPath = args.First();
+                var writePath = args.Last();
 
                 FileReader fileReader = new FileReader();
                 CalkaWithDataLogger calkaWithLogger = new CalkaWithDataLogger();

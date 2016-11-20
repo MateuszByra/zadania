@@ -51,6 +51,7 @@ namespace Zadanie2
             Console.Clear();
             Console.WriteLine($"Wynik przy użyciu Parallel.For: {parallelLoopResult[result]} \n Czas obliczeń: {parallelLoopResult[time]}");
             Console.WriteLine($"Wynik przy użyciu for: {normalLoopResult[result]} \n Czas obliczeń: {normalLoopResult[time]}");
+            Console.WriteLine("Naciśnij dowolny przysik aby wyświetlić wykres.");
             Console.ReadKey();
         }
 
