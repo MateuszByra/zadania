@@ -12,13 +12,9 @@ namespace Zadanie2
 {
     public class CalkaWithDataLogger : Calka
     {
-        /*private CalkaParametersWriteList ParallelResult { get; set; }
-        private CalkaParametersWriteList NormalResult { get; set; }*/
         private CalkaParametersWriteList _result { get; set; }
         public CalkaWithDataLogger()
         {
-            /*ParallelResult = new CalkaParametersWriteList();
-            NormalResult = new CalkaParametersWriteList();*/
             _result = new CalkaParametersWriteList();
         }
 
